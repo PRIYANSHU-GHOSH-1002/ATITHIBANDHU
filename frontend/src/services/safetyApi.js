@@ -1,5 +1,5 @@
-const API_URL = "http://127.0.0.1:8000";
-
+const API_URL =
+    process.env.REACT_APP_AI_API_URL || "http://127.0.0.1:8000";
 
 export async function getNearbySafetyAreas(
     latitude,
@@ -21,13 +21,11 @@ export async function getNearbySafetyAreas(
         }
     );
 
-
     if (!response.ok) {
         throw new Error(
             "Failed to fetch safety data"
         );
     }
-
 
     return await response.json();
 }
