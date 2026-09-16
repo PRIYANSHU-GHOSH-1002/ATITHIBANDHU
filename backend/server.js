@@ -52,6 +52,7 @@ initLocationSocket(io);
 
 const PORT = process.env.PORT || 5000;
 
+// Local development
 if (require.main === module) {
   connectDB().then(() => {
     server.listen(PORT, () => {
@@ -62,4 +63,17 @@ if (require.main === module) {
   });
 }
 
-module.exports = app;
+// Vercel / serverless
+module.exports = async (req, res) => {
+  try {
+    await connectDB();
+    return app(req, res);
+  } catch (error) {
+    console.error('[Vercel] Database connection failed:', error);
+
+    return res.status(500).json({
+      message: 'Database connection failed',
+      error: error.message,
+    });
+  }
+};
