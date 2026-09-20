@@ -3,7 +3,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-from src.location_predict import (
+from src.location_predict_deploy import (
     predict_location,
     predict_nearby_locations
 )

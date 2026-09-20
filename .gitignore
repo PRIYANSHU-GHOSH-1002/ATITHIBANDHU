@@ -19,6 +19,10 @@ __pycache__/
 
 # Python ML data
 *.csv
+!tourist_ai_model/data/runtime_locations.csv
+
+# ML models
+*.pkl
 
 # IDE
 .vscode/
@@ -30,5 +34,3 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
-
-tourist_ai_model/models/tourist_safety_random_forest.pkl
