@@ -3,7 +3,7 @@ import api from "../services/api";
 import { getSocket } from "../services/socket";
 import MapView from "../components/MapView";
 import SOSButton from "../components/SOSButton";
-import { getNearbySafetyAreas } from "../services/aiService";
+import { getNearbySafetyAreas } from "../services/safetyApi";
 import { useAuth } from "../context/AuthContext";
 
 // ==========================================
