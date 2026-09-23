@@ -45,6 +45,7 @@ app.add_middleware(
     "http://localhost:5174",
     "http://localhost:3000",
     "https://atithibandhu-frontend.vercel.app",
+    "https://atithibandhu.vercel.app"
     ],
 
     allow_credentials=True,
